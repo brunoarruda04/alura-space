@@ -16,9 +16,9 @@ class Photography(models.Model):
     category = models.CharField(
         max_length=50, choices=CATEGORY_OPTIONS, default="")
     description = models.TextField(null=False, blank=False)
-    photo = models.CharField(max_length=100, null=False, blank=False)
+    photo = models.ImageField(upload_to="photos/%Y/%M/%d/", blank=True)
     published = models.BooleanField(default=False)
     photo_date = models.DateTimeField(default=datetime.now(), blank=False)
 
     def __str__(self):
-        return f"Photography | Name: {self.name}"
+        return self.name
