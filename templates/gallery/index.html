@@ -26,7 +26,7 @@
                      <a href="{% url 'image' photography.id %}">
                         <img class="card__imagem" src="{% static '/assets/imagens/galeria/'%}{{ photography.photo }}" alt="foto" />
                      </a>
-                     <span class="card__tag">Star</span>
+                     <span class="card__tag">{{photography.category}}</span>
                      <div class="card__info">
                         <p class="card__titulo">{{photography.name}}</p>
                         <div class="card__texto">
